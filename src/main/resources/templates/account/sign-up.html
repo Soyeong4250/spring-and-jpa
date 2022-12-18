@@ -12,7 +12,6 @@
     </style>
 </head>
 <body class="bg-light">
-    회원 가입 화면
     <nav class="navbar navbar-expand-sm bg-danger bg-opacity-25 mb-2">
         <div class="container-fluid">
             <a class="navbar-brand" th:href="@{/}">
@@ -44,7 +43,7 @@
             <h2>회원가입</h2>
         </div>
         <div class="row justify-content-center">
-            <form class="needs-validation col-sm-6" action="#" th:action="@{sign-up}" th:object="${signUpForm}" method="post" novalidate>
+            <form class="needs-validation col-sm-6" action="#" th:action="@{/sign-up}" th:object="${signUpForm}" method="post" novalidate>
                 <div class="form-group">
                     <label for="nickname">닉네임</label>
                     <input id="nickname" type="text" th:field="*{nickname}" class="form-control" placehorder="whiteship" aria-describedby="nicknameHelp" required minlength="3" maxlength="20">
@@ -60,7 +59,7 @@
                     <small id="emailHelp" class="form-text text-muted">
                         Custom Study는 사용자의 이메일을 공개하지 않습니다.
                     </small>
-                    <small class="invaild-feedback" >이메일을 입력하세요.</small>
+                    <small class="invalid-feedback" >이메일을 입력하세요.</small>
                     <small class="form-text text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</small>
                 </div>
 
@@ -70,7 +69,7 @@
                     <small id="passwordHelp" class="form-text text-muted">
                         8자 이상 50자 이내로 입력하세요. 영문자, 숫자, 특수기호를 사용할 수 있으며 공백은 사용할 수 없습니다.
                     </small>
-                    <small class="invaild-feedback" >비밀번호를 입력하세요.</small>
+                    <small class="invalid-feedback" >비밀번호를 입력하세요.</small>
                     <small class="form-text text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</small>
                 </div>
 
@@ -83,12 +82,12 @@
             </form>
         </div>
 
-        <footer th:fragment="footer">
-            <div class="row d-flex justify-content-center">
-                <img class="col m-0 p-0" src="/images/custom_study.png" alt="">
-                <small class="col mb-3 text-muted">&copy; 2020</small>
+        <!--<footer th:fragment="footer">
+            <div class="row justify-content-center">
+                <img class="col col-sm-2 m-0 p-md-1" src="/images/custom_study.png" alt="">
+                <small class="col col-sm-2 m-3 text-muted">&copy; 2020</small>
             </div>
-        </footer>
+        </footer>-->
     </div>
     <script>
         (function () {
